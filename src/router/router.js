@@ -4,6 +4,7 @@
   import LoginScreen    from "../pages/LoginScreen.svelte";
   import ProductScreen  from "../pages/ProductScreen.svelte";
   import CartScreen from "../pages/CartScreen.svelte";
+  import PaidScreen from "../pages/PaidScreen.svelte";
 
   export const routes = {
     "/"         : HomeScreen,
@@ -11,6 +12,7 @@
     "/login"    : LoginScreen,
     "/register" : RegisterScreen,
     "/cart"     : CartScreen,
+    "/paid"     : PaidScreen,
 
 
     "/products" : ProductScreen,
