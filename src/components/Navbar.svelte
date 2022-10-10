@@ -1,5 +1,7 @@
 <script>
+  import { firebase } from "../firebase/config";
   import { link, push } from "svelte-spa-router";
+  import { user } from '../stores/authStore'
 
 
     const handleLogin = () => {
@@ -8,6 +10,12 @@
 
     const handleRegister = () => {
         push('/register');
+    }
+    
+    const handleLogOut = async () => {
+      await firebase.auth().signOut();
+      user.set(null);
+      push('/login');
     }
 </script>
 
@@ -35,8 +43,12 @@
         </li>
       </ul>
       <div class="d-flex">
-        <button class="btn btn-success mx-2" on:click={handleLogin}>Login</button>
-        <button class="btn btn-info" on:click={handleRegister}>Register</button>
+        {#if $user}
+          <button class="btn btn-danger mx-2" on:click={handleLogOut}>LogOut</button>
+        {:else}
+          <button class="btn btn-success mx-2" on:click={handleLogin}>Login</button>
+          <button class="btn btn-info" on:click={handleRegister}>Register</button>
+        {/if}
       </div>
     </div>
   </div>

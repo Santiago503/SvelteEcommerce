@@ -1,6 +1,5 @@
 import firebase  from "firebase/compat/app";
 import "firebase/compat/auth"
-
 const firebaseConfig = {
   apiKey: "AIzaSyAENyY1YrTtal91lJdCzsMIYtgdBiYdrk4",
   authDomain: "svelte-ecommerce-8c38b.firebaseapp.com",
@@ -11,7 +10,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 const googleAuthProvider =  new firebase.auth.GoogleAuthProvider();
 
-export { app, firebase, googleAuthProvider };
+export { firebase, googleAuthProvider };

@@ -3,12 +3,14 @@
   import RegisterScreen from "../pages/RegisterScreen.svelte";
   import LoginScreen    from "../pages/LoginScreen.svelte";
   import ProductScreen  from "../pages/ProductScreen.svelte";
+  import CartScreen from "../pages/CartScreen.svelte";
 
   export const routes = {
     "/"         : HomeScreen,
     "/home"     : HomeScreen,
     "/login"    : LoginScreen,
     "/register" : RegisterScreen,
+    "/cart"     : CartScreen,
 
 
     "/products" : ProductScreen,
